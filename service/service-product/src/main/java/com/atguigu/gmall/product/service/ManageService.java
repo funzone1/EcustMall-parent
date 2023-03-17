@@ -1,10 +1,13 @@
 package com.atguigu.gmall.product.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.atguigu.gmall.model.product.*;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 public interface ManageService {
     List<BaseCategory1> getCategery1();
@@ -63,6 +66,71 @@ public interface ManageService {
      * @param skuId
      */
     void cancelSale(Long skuId);
+
+    /**
+     * 根据skuId 查询skuInfo
+     * @param skuId
+     * @return
+     */
+    SkuInfo getSkuInfo(Long skuId);
+
+    /**
+     * 通过三级分类id查询分类信息
+     * @param category3Id
+     * @return
+     */
+    BaseCategoryView getCategoryViewByCategory3Id(Long category3Id);
+
+    /**
+     * 获取sku价格
+     * @param skuId
+     * @return
+     */
+    BigDecimal getSkuPrice(Long skuId);
+
+    /**
+     * 根据spuId，skuId 查询销售属性集合
+     * @param skuId
+     * @param spuId
+     * @return
+     */
+    List<SpuSaleAttr> getSpuSaleAttrListCheckBySku(Long skuId, Long spuId);
+
+    /**
+     * 根据spuId 查询map 集合属性
+     * @param spuId
+     * @return
+     */
+    Map getSkuValueIdsMap(Long spuId);
+
+    /**
+     * 根据spuid获取商品海报
+     * @param spuId
+     * @return
+     */
+    List<SpuPoster> findSpuPosterBySpuId(Long spuId);
+
+    /**
+     * 通过skuId 集合来查询数据
+     * @param skuId
+     * @return
+     */
+    List<BaseAttrInfo> getAttrList(Long skuId);
+
+    /**
+     * 获取全部分类信息
+     * @return
+     */
+    List<JSONObject> getBaseCategoryList();
+
+    /**
+     * 通过品牌Id 来查询数据
+     * @param tmId
+     * @return
+     */
+    BaseTrademark getTrademarkByTmId(Long tmId);
+
+
 
 
 }

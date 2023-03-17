@@ -1,7 +1,7 @@
 package com.atguigu.gmall.common.cache;
 
 import com.alibaba.fastjson.JSON;
-import com.atguigu.gmall.common.constant.RedisConst;
+import com.atguigu.gmall.constant.RedisConst;
 import lombok.SneakyThrows;
 import org.apache.commons.lang.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -70,7 +70,10 @@ public class GmallCacheAspect {
                         obj = point.proceed(point.getArgs());
                         //  防止缓存穿透
                         if (obj==null){
-                            Object object = new Object();
+                            //反射
+                            Class aClass = methodSignature.getReturnType();
+                            Object object = aClass.newInstance();
+//                            Object object = new Object();
                             //  将缓存的数据变为 Json 的 字符串
                             this.redisTemplate.opsForValue().set(key, JSON.toJSONString(object),RedisConst.SKUKEY_TEMPORARY_TIMEOUT,TimeUnit.SECONDS);
                             return object;
