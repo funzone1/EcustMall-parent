@@ -1,7 +1,6 @@
 package com.yuzai.gmall.product.controller;
 
 import com.yuzai.gmall.common.result.Result;
-import com.atguigu.gmall.model.product.*;
 import com.yuzai.gmall.model.product.*;
 import com.yuzai.gmall.product.service.ManageService;
 import io.swagger.annotations.Api;
