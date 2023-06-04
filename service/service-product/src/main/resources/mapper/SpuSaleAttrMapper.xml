@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.atguigu.gmall.product.mapper.SpuSaleAttrMapper">
+<mapper namespace="com.yuzai.gmall.product.mapper.SpuSaleAttrMapper">
 
 
     <!--结果处理-手动映射-->
 
-    <resultMap id="spuSaleAttrMap" type="com.atguigu.gmall.model.product.SpuSaleAttr" autoMapping="true">
+    <resultMap id="spuSaleAttrMap" type="com.yuzai.gmall.model.product.SpuSaleAttr" autoMapping="true">
 
         <id column="id" property="id"></id>
-        <collection property="spuSaleAttrValueList" ofType="com.atguigu.gmall.model.product.SpuSaleAttrValue" autoMapping="true">
+        <collection property="spuSaleAttrValueList" ofType="com.yuzai.gmall.model.product.SpuSaleAttrValue" autoMapping="true">
 
             <id column="sale_attr_value_id" property="id"></id>
 

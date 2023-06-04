@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <!--namespace 定义接口的全路径-->
-<mapper namespace="com.atguigu.gmall.product.mapper.BaseAttrInfoMapper">
-    <resultMap id="baseAttrInfoMap" type="com.atguigu.gmall.model.product.BaseAttrInfo" autoMapping="true">
+<mapper namespace="com.yuzai.gmall.product.mapper.BaseAttrInfoMapper">
+    <resultMap id="baseAttrInfoMap" type="com.yuzai.gmall.model.product.BaseAttrInfo" autoMapping="true">
         <id property="id" column="id"></id>
-        <collection property="attrValueList" ofType="com.atguigu.gmall.model.product.BaseAttrValue" autoMapping="true">
+        <collection property="attrValueList" ofType="com.yuzai.gmall.model.product.BaseAttrValue" autoMapping="true">
             <id property="id" column="attr_value_id"></id>
         </collection>
     </resultMap>
